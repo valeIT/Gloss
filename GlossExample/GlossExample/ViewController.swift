@@ -41,7 +41,7 @@ class ViewController: UIViewController {
                 "html_url" : "https://github.com/hkellaway"
             ],
             "language" : "Swift"
-            ]
+            ] as [String : Any]
         
         guard let repo = Repo(json: repoJSON) else
         {
@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         print("JSON: \(repo.toJSON())")
         print("")
         
-        guard let repos = [Repo].fromJSONArray([repoJSON, repoJSON, repoJSON]) else {
+        guard let repos = [Repo].fromJSONArray(jsonArray: [repoJSON, repoJSON, repoJSON]) else {
             print("DECODING FAILURE :(")
             return
         }

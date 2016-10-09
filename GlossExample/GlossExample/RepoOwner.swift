@@ -41,7 +41,7 @@ struct RepoOwner: Glossy {
     // MARK: - Serialization
     
     func toJSON() -> JSON? {
-        return jsonify([
+        return jsonify(array: [
             "id" ~~> self.ownerId,
             "login" ~~> self.username
         ])
